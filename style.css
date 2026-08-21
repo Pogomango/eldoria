@@ -9,6 +9,9 @@
 	--main-font-color: #FAFAFA;
 	--main-border-color:#D9D9D9;
 	--main-btn-hover: #353839;
+	--main-modal-bg: #D9D9D9;
+	--main-close-modal-btn: black;
+	--main-close-modal-btn-hover: gray;
 }
 
 body{
@@ -36,14 +39,9 @@ button:hover{
 	transition: background-color 0.5s; 
 }
 
-.container{
-	display: 	grid;
-  grid-template-columns: 1fr 2fr;	
-	padding: 2rem 3.125rem 3.125rem;
-	gap: 3.125rem;
-}
 
-/* Project name */
+
+/* Project name styles */
 .project-name{
 	font-size: 1.8rem;
 	letter-spacing: 0.6rem;
@@ -55,6 +53,14 @@ button:hover{
 	font-size: 0.4rem;
 }
 
+/* Container styles */
+.container{
+	display: 	grid;
+  grid-template-columns: 1fr 2fr;	
+	padding: 2rem 3.125rem 3.125rem;
+	gap: 3.125rem;
+}
+
 .main-block,
 .sidebar-controls {
 	border: 3px solid var(--main-border-color);
@@ -62,7 +68,7 @@ button:hover{
 	padding: 2em;
 }
 
-
+/* sidebar styles */
 .sidebar-controls {
 	display: flex;
 	flex-direction: column;
@@ -73,4 +79,52 @@ button:hover{
 .btn-add-dynasty,
 .btn-delete-dynasty{
 	width: 50%;
+}
+
+/* main-block styles */
+.dynasty-block{
+	border: 3px solid red;
+	border-radius: 8px;
+
+	padding: 2em;
+}
+
+/* Modal styles */
+.modal-background{
+	visibility: hidden;
+	position: absolute;
+	background-color: rgba(37, 36, 36, 0.336);
+	backdrop-filter: blur(10px);
+	width: 100vw;
+	height:100vh;
+
+
+}
+.modal-box{
+	visibility: hidden;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+
+	display:grid;
+	grid-template-rows:1fr 6fr;
+	
+	width:500px;
+	height:400px;
+	background-color: var(--main-modal-bg);
+	border-radius: 30px;
+	color:black;
+	font-size:1.2rem;
+
+	padding: 1rem 2rem;
+}
+.close-modal-btn{
+	justify-self: right;
+	color: var(--main-close-modal-btn);
+}
+.close-modal-btn:hover{
+	background-color: inherit;
+	color: var(--main-close-modal-btn-hover);
+	transition: color 0.5s
 }
